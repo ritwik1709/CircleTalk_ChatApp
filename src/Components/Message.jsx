@@ -1,5 +1,4 @@
 import { Avatar, HStack, Text } from '@chakra-ui/react'
-import { px } from 'framer-motion'
 import React from 'react'
 
 const Message = ({text,uri,user}) => {
