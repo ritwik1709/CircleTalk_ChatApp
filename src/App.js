@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { app } from "./firebase";
 import Message from "./Components/Message";
 import "./app.css";
+import { FcGoogle } from "react-icons/fc";
 import { Container, VStack, Button, Input, HStack } from "@chakra-ui/react";
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import { getFirestore, addDoc, collection, serverTimestamp, onSnapshot, query, orderBy } from 'firebase/firestore';
@@ -93,7 +94,7 @@ function App() {
             <div className="popup-content">
               <h1>Welcome to TwinTalk🤝</h1>
               <p>Please Sign In to Continue:</p>
-              <Button onClick={loginhandler} className="signin-button">Sign in with Google</Button>
+              <Button onClick={loginhandler} className="signin-button"><FcGoogle className="google-icon"/>Sign in with Google</Button>
             </div>
           </div>
         )
