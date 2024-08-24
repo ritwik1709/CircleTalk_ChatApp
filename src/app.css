@@ -120,3 +120,32 @@ body {
 
 
 
+/* mediaqueries */
+@media only screen and (max-width: 435px) {
+  .popup-content h1  {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .popup-content .signin-button  {
+    font-size: 14px;
+  }
+  .popup-content h1  {
+    font-size: 18px;
+  }
+  .popup-content p{
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .popup-content .signin-button  {
+    font-size: 12px;
+    margin-right: 0.2rem;
+  }
+  .popup-content h1  {
+    font-size: 15px;
+  }
+  .popup-content p{
+    font-size: 10px;
+  }
+}
