@@ -92,7 +92,7 @@ function App() {
         ) : (
           <div className="popup-container">
             <div className="popup-content">
-              <h1>Welcome to TwinTalk🤝</h1>
+              <h1>Welcome to CircleTalk🤝</h1>
               <p>Please Sign In to Continue:</p>
               <Button onClick={loginhandler} className="signin-button"><FcGoogle className="google-icon"/>Sign in with Google</Button>
             </div>
