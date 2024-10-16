@@ -28,22 +28,11 @@ cd CircleTalk_ChatApp
 ```
 Install Dependencies
 ```
-cd client
 npm install
 ```
-```
-cd server
-npm install
-```
-Start Application
 
-Frontend
+Start Application
 ```
-cd client
 npm start
 ```
-Backend
-```
-cd server
-npm start
-```
+
