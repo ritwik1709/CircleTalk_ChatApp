@@ -20,7 +20,7 @@ Implemented Firebase Authentication for secure and seamless user login & Firesto
 ## Run Locally
 Clone the repository
 ```
-git clone https://github.com/ritwik1709/CircleTalk_ChatApp
+git clone https://github.com/ritwik1709/CircleTalk_ChatApp.git
 ```
 Go to the project Directory
 ```
