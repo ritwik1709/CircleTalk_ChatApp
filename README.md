@@ -1,53 +1,49 @@
-InterViewCode
-InterViewCode is a real-time code collaboration web application that allows multiple users to collaborate on code in the same virtual room. It's built using the Express.js, React, Node.js, Bootstrap and Socket.IO for real-time communication.
+# CircleTalk_ChatApp
+CircleTalk a real-time group chat application enabling multiple users to log in and chat in a single conversation space. Utilized ReactJS for interactive frontend interface with & CSS for styling.
+Implemented Firebase Authentication for secure and seamless user login & Firestore for real-time database Management.
 
-Features
-Create or join a virtual "room" by entering a room ID.
-Set your username to identify yourself in the room.
-Real-time code collaboration with other users in the same room.
-Changes made by one user are instantly reflected on all connected clients.
-Code highlighting and editor customization options.
-Technologies Used
-Express.js: Handling API requests.
-React: Building the front-end interface.
-Node.js: Running the server.
-Socket.IO: Enabling real-time communication.
-uuid: Generating unique room IDs.
-CodeMirror: Providing the code editor.
-Usage
-Open the InterViewCode Application Home Page.
-Enter a Room ID or generate a new one.
-Set your username.
-Start collaborating with others in the same room.
-Video
- InterViewCode.Intro.mp4 
-Photos
-Home Page
-image
+## Features
+- Required just your Email for SignIn purpose without any details.
+- All the users must be signedIn to start conversation.
+- Real-time conversation at a single conversation space.
 
-Editor Page
-image
+## Technologies Used
+- ReactJS
+- CSS
+- Firebase & Firestore (authentication, database)
 
-Run Locally
-Clone the project
+ ## Photos
+ ![{4334D870-06FE-4D3F-ACF9-739DAD69A9FC}](https://github.com/user-attachments/assets/2612e3ab-140a-4eeb-9291-b75073705652)
 
-  git clone https://github.com/YOUR-USERNAME/InterViewCode.git
-Go to the project directory
-
-  cd InterViewCode
-Install dependencies
-
-  cd client
-  npm install
-  cd server
-  npm install
+ ![{D7178877-5F16-40F8-B7C1-DC9247310ED2}](https://github.com/user-attachments/assets/a07a4bb5-adca-456c-bb88-86c987734949)
+ 
+## Run Locally
+Clone the repository
+```
+git clone https://github.com/ritwik1709/CircleTalk_ChatApp
+```
+Go to the project Directory
+```
+cd CircleTalk_ChatApp
+```
+Install Dependencies
+```
+cd client
+npm install
+```
+```
+cd server
+npm install
+```
 Start Application
 
-Backend:
-
-  cd server
-  npm start
-Frontend:
-
-  cd client
-  npm start
+Frontend
+```
+cd client
+npm start
+```
+Backend
+```
+cd server
+npm start
+```
