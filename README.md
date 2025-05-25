@@ -1,11 +1,12 @@
 # CircleTalk_ChatApp
-CircleTalk a real-time group chat application enabling multiple users to log in and chat in a single conversation space. Utilized ReactJS for interactive frontend interface with & CSS for styling.
+CircleTalk a real-time group chat application enabling multiple users to log in and chat in a single conversation space. Utilized ReactJS for interactive frontend interface with & ChakraUI, CSS for styling.
 Implemented Firebase Authentication for secure and seamless user login & Firestore for real-time database Management.
 
 ## Features
 - Required just your Email for SignIn purpose without any details.
 - All the users must be signedIn to start conversation.
 - Real-time conversation at a single conversation space.
+- user can share images and files within the chat.
 
 ## Technologies Used
 - ReactJS
@@ -13,9 +14,11 @@ Implemented Firebase Authentication for secure and seamless user login & Firesto
 - Firebase & Firestore (authentication, database)
 
  ## Photos
- ![{4334D870-06FE-4D3F-ACF9-739DAD69A9FC}](https://github.com/user-attachments/assets/2612e3ab-140a-4eeb-9291-b75073705652)
+ ![image](https://github.com/user-attachments/assets/8b3e5459-cd88-46f4-9389-9fb56eaae91b)
 
- ![{D7178877-5F16-40F8-B7C1-DC9247310ED2}](https://github.com/user-attachments/assets/a07a4bb5-adca-456c-bb88-86c987734949)
+ 
+![image](https://github.com/user-attachments/assets/71469859-1e7e-4730-9b4b-6ff8e58128db)
+
  
 ## Run Locally
 Clone the repository
