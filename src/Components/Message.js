@@ -1,64 +1,108 @@
-import React, { useEffect } from "react";
-import { Avatar, Button, VStack } from "@chakra-ui/react";
+// import { Avatar, HStack, Text, Box } from '@chakra-ui/react';
+// import React from 'react';
 
-const Message = ({ message, file, user, uri, logouthandler, divforscroll, handleSend }) => {
+// const Message = ({ text, file, uri, user }) => {
+//   const isMe = user === "me";
+//   return (
+//     <HStack
+//       alignSelf={isMe ? 'flex-end' : 'flex-start'}
+//       borderRadius={'base'}
+//       bg={isMe ? 'purple.400' : 'gray.100'}
+//       color={isMe ? 'white' : 'black'}
+//       px={'4'}
+//       py={'2'}
+//       maxW="80%"
+//       spacing={3}
+//       marginY={2}
+//     >
+//       {!isMe && <Avatar src={uri} />}
+//       <Box>
+//         {text && <Text mb={file ? 2 : 0}>{text}</Text>}
+//         {file && file.type.startsWith("image/") && (
+//           <img src={file.url} alt={file.name} style={{ maxWidth: 200, borderRadius: 8 }} />
+//         )}
+//         {file && file.type.startsWith("audio/") && (
+//           <audio controls src={file.url} style={{ marginTop: 8 }} />
+//         )}
+//         {file && !file.type.startsWith("image/") && !file.type.startsWith("audio/") && (
+//           <a href={file.url} download={file.name} style={{ color: isMe ? "#fff" : "#222" }}>
+//             Download {file.name}
+//           </a>
+//         )}
+//       </Box>
+//       {isMe && <Avatar src={uri} />}
+//     </HStack>
+//   );
+// };
+
+// export default Message;
+
+import React, { useEffect, useState } from "react";
+import { HStack, Text, Box, Avatar } from '@chakra-ui/react';
+
+const Message = ({ text, file, user, uri }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
   const isMe = user === "me";
+  const userName = isMe ? "Me" : (user.name || user.id || "Other");
+
+  console.log("Message props:", { text, file, user, uri, isMe, userName });
 
   useEffect(() => {
-    divforscroll.current.scrollIntoView({ behavior: 'smooth' });
-  }, [message, divforscroll]);
+    if (uri) {
+      const img = new Image();
+      img.onload = () => {
+        setImageLoaded(true);
+      };
+      img.onerror = (e) => {
+        setImageLoaded(false);
+      };
+      img.src = uri;
+    }
+  }, [uri]);
+
+  const AvatarComponent = (
+    <Avatar
+      src={imageLoaded ? uri : undefined}
+      name={userName}
+      size="sm"
+      bg={imageLoaded ? "transparent" : "gray.300"}
+      icon={!imageLoaded ? <span role="img" aria-label="fallback">👤</span> : undefined}
+    />
+  );
 
   return (
-    <div>
-      <Button onClick={logouthandler} colorScheme="red" w={'full'}>Logout</Button>
-      <VStack>
-        {/* messages */}
-        <div ref={divforscroll}></div>
-      </VStack>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: isMe ? "row-reverse" : "row",
-          alignItems: "flex-start",
-          marginBottom: 16,
-        }}
+    <HStack
+      alignSelf={isMe ? 'flex-end' : 'flex-start'}
+      spacing={2}
+      mb={2}
+    >
+      {!isMe && AvatarComponent}
+      <Box
+        bg={isMe ? "purple.500" : "gray.100"}
+        color={isMe ? "white" : "black"}
+        borderRadius="lg"
+        px={3}
+        py={2}
+        maxW="70%"
       >
-        <Avatar src={uri} />
-        <div
-          style={{
-            background: isMe ? "#6C63FF" : "#E5E5EA",
-            color: isMe ? "#fff" : "#222",
-            borderRadius: 12,
-            padding: 12,
-            marginLeft: isMe ? 0 : 12,
-            marginRight: isMe ? 12 : 0,
-            maxWidth: 320,
-            wordBreak: "break-word",
-          }}
-        >
-          {message && <div style={{ marginBottom: file ? 8 : 0 }}>{message}</div>}
-          {file && file.type.startsWith("image/") && (
-            <img
-              src={file.url}
-              alt={file.name}
-              style={{ maxWidth: 200, display: "block", marginTop: 8, borderRadius: 8 }}
-            />
-          )}
-          {file && file.type.startsWith("audio/") && (
-            <audio controls src={file.url} style={{ marginTop: 8 }} />
-          )}
-          {file && !file.type.startsWith("image/") && !file.type.startsWith("audio/") && (
-            <a
-              href={file.url}
-              download={file.name}
-              style={{ marginTop: 8, display: "inline-block", color: isMe ? "#fff" : "#222" }}
-            >
-              Download {file.name}
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
+        <Text fontSize="xs" color={isMe ? "whiteAlpha.700" : "blackAlpha.700"}>
+          {userName}
+        </Text>
+        {text && <Text>{text}</Text>}
+        {file && file.type && file.type.startsWith("image/") && (
+          <img src={file.url} alt={file.name} style={{ maxWidth: '200px', borderRadius: '8px', marginTop: '8px' }} />
+        )}
+        {file && file.type && file.type.startsWith("audio/") && (
+          <audio controls src={file.url} style={{ marginTop: '8px' }} />
+        )}
+        {file && file.type && !file.type.startsWith("image/") && !file.type.startsWith("audio/") && (
+          <Text as="a" href={file.url} download={file.name} color={isMe ? "white" : "blue.500"} mt={2} display="block">
+            Download {file.name}
+          </Text>
+        )}
+      </Box>
+      {isMe && AvatarComponent}
+    </HStack>
   );
 };
 
