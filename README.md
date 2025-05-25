@@ -10,7 +10,7 @@ Implemented Firebase Authentication for secure and seamless user login & Firesto
 
 ## Technologies Used
 - ReactJS
-- CSS
+- ChakraUI/CSS
 - Firebase & Firestore (authentication, database)
 
  ## Photos
