@@ -1,7 +1,7 @@
 *{
-  &::-webkit-scrollbar{
-      display: none;
-  }
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 
@@ -9,143 +9,190 @@
 
 /* General body styling */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
 /* Styles for background wrapper */
 .background-wrapper {
-  background-image: url('../backimg.jpg'); /* Update path if needed */
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-/* Styles for container */
-.container {
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 800px; /* Adjust as needed */
-  width: 100%;
-  height: 100%;
-}
-
+    background-image: url('../backimg.jpg'); /* Update path if needed */
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Styles for container */
+  .container {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Adjust as needed */
+    width: 100%;
+    height: 100%;
+  }
+  
 
 /* Popup container styles */
 /* app.css */
 
 
 .popup-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  }
+  .background-wrapper, .popup-container {
+  min-height: 100vh;
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-}
 
-/* Popup content styles */
-.popup-content {
-  background: #fff;
-  padding:60px 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  /* background: url('../images2.jpg') no-repeat center center fixed;  */
+  background: url('https://www.shutterstock.com/shutterstock/photos/2188045201/display_1500/stock-vector-chat-dialog-boxes-in-glass-morphism-effect-style-transparent-frosted-acrylic-speech-bubble-on-2188045201.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  /* Popup content styles */
+  /* .popup-content {
+    background: rgba(255, 255, 255, 0.85);
+    padding:60px 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    width: 80%;
+    text-align: center;
+    max-width: 400px; 
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ddd; 
+    animation: glowBorder 1.5s infinite alternate;
+  } */
+   .popup-content {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border: 1.5px solid rgba(81, 54, 234, 0.25);
+  padding: 60px 40px;
   width: 80%;
   text-align: center;
-  max-width: 400px; /* Adjust as needed */
+  max-width: 400px;
   position: relative;
   overflow: hidden;
-  border: 2px solid #ddd; /* Base border color */
   animation: glowBorder 1.5s infinite alternate;
+  /* Optional: subtle gradient overlay */
+  background-image: linear-gradient(135deg, rgba(108,85,238,0.08) 0%, rgba(255,255,255,0.18) 100%);
 }
-
-/* Glowing border keyframes */
-@keyframes glowBorder {
-  from {
-    border-color: #ddd;
-    box-shadow: 0 0 5px rgba(115, 70, 238, 0.5);
+  
+  /* Glowing border keyframes */
+  @keyframes glowBorder {
+    from {
+      border-color: #ddd;
+      box-shadow: 0 0 5px rgba(115, 70, 238, 0.5);
+    }
+    to {
+      border-color: rgb(81, 54, 234);
+      box-shadow: 0 0 15px rgba(81, 54, 234,1);
+    }
   }
-  to {
-    border-color: rgb(81, 54, 234);
-    box-shadow: 0 0 15px rgba(81, 54, 234,1);
+  
+  
+  
+  .popup-content h1{
+    font-size: 24px;
+    font-weight: 500;
   }
-}
+  .popup-content p{
+    color: #555;
+  }
+  /* Sign-in button styling */
+  .popup-content .signin-button {
+    background: #6c55ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 50px;
+    width: 100%;
+    transition: background 0.3s ease;
+  }
+  
+  .popup-content .signin-button:hover {
+    background: #5136ea;
+  }
+  .google-icon{
+    margin-right: 1rem;
+    font-size: 24px;
+  }
+  /* app.css */
 
+  
 
+  /* mediaqueries */
+  @media only screen and (max-width: 435px) {
+    .popup-content h1  {
+      font-size: 22px;
+    }
+  }
+  @media only screen and (max-width: 380px) {
+    .popup-content .signin-button  {
+      font-size: 14px;
+    }
+    .popup-content h1  {
+      font-size: 18px;
+    }
+    .popup-content p{
+      font-size: 14px;
+    }
+  }
+  @media only screen and (max-width: 340px) {
+    .popup-content .signin-button  {
+      font-size: 12px;
+      margin-right: 0.2rem;
+    }
+    .popup-content h1  {
+      font-size: 15px;
+    }
+    .popup-content p{
+      font-size: 10px;
+    }
+  }
 
-.popup-content h1{
-  font-size: 24px;
-  font-weight: 500;
-}
-.popup-content p{
-  color: #888;
-}
-/* Sign-in button styling */
-.popup-content .signin-button {
-  background: #6c55ee;
-  color: white;
-  border: none;
+  .dark-theme {
+    background: #181818;
+    color: #fff;
+  }
+  .chat-container {
+  background: #f5f5f5;
+  color: #222;
+  padding: 16px;
   border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 50px;
-  width: 100%;
-  transition: background 0.3s ease;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.popup-content .signin-button:hover {
-  background: #5136ea;
-}
-.google-icon{
-  margin-right: 1rem;
-  font-size: 24px;
-}
-/* app.css */
-
-
-
-/* mediaqueries */
-@media only screen and (max-width: 435px) {
-  .popup-content h1  {
-    font-size: 22px;
-  }
-}
-@media only screen and (max-width: 380px) {
-  .popup-content .signin-button  {
-    font-size: 14px;
-  }
-  .popup-content h1  {
-    font-size: 18px;
-  }
-  .popup-content p{
-    font-size: 14px;
-  }
-}
-@media only screen and (max-width: 340px) {
-  .popup-content .signin-button  {
-    font-size: 12px;
-    margin-right: 0.2rem;
-  }
-  .popup-content h1  {
-    font-size: 15px;
-  }
-  .popup-content p{
-    font-size: 10px;
-  }
+/* Dark mode styles */
+.dark-theme .chat-container {
+  background: #23272f;
+  color: #fff;
 }
